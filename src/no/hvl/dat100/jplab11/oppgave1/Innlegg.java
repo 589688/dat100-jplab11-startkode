@@ -4,7 +4,10 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	protected int id;
+	protected String bruker;
+	protected String dato;
+	protected int likes;
 	
 	public Innlegg() {
 		
@@ -12,60 +15,67 @@ public abstract class Innlegg {
 	
 	public Innlegg(int id, String bruker, String dato) {
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+	this.id = id;
+	this.bruker = bruker;
+	this.dato = dato;
+	
+	likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
 
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return bruker;
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return dato;
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return id;
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return likes;
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes += 1;
+	
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		boolean lik = false;
+		if (getId() == innlegg.getId()) {
+			lik = true;
+		}
+	return lik;
 	}
 	
 	@Override
 	public String toString() {
 		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		String tekst = getId() + "\n" + getBruker() + "\n" + getDato() + "\n" + getLikes() + "\n";
+				return tekst;
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
